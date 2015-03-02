@@ -1,0 +1,42 @@
+{% extends 'article.html' %}
+
+{% block flickr %}
+<p>
+  Back to <a href="{{photoset.url}}">{{ photoset.title }}</a>
+</p>
+<p>
+  {% if 'original' in photo.sizes %}
+  <a href="{{ photo.sizes.original.source }}">Download</a>
+  <p>Thanks to use my photos. Please, respect the creative common licence - Attribution - Pas d’Utilisation Commerciale - Pas de Modification</p>
+  {% else %}
+  No original available.
+  {% endif %}
+</p>
+
+<hr style="clear:both;"/>
+
+<img src="{{photo.sizes.large.source}}" />
+<p>
+  Taken on {{ photo.dates.taken }}
+</p>
+<p>
+  <a href="{{ photo.urls.photopage }}">Flickr<i class="fa fa-flickr fa-3x"></i></a>
+</p>
+{% if photo_next %}
+<p style="float: right;">
+  <a href="{{ photo_next.url }}">
+    <img src="{{ photo_next.sizes['square'].source }}" />
+    {{ photo_next.title }} &raquo;
+  </a>
+</p>
+{% endif %}
+{% if photo_previous %}
+<p style="float: left;">
+  <a href="{{ photo_previous.url }}">
+    &laquo; {{ photo_previous.title }}
+    <img src="{{ photo_previous.sizes['square'].source }}" />
+  </a>
+</p>
+{% endif %}
+
+{% endblock %}
