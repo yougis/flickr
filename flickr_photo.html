@@ -4,10 +4,11 @@
 
 
 
-<img src="{{photo.sizes.large.source}}" />
+<img src="{{photo.sizes.large.source}}" style="height: 100%;width: 100%;"/>
 <p style="padding-left: 50%">
   {% if 'original' in photo.sizes %}
   <a href="{{ photo.sizes.original.source }}"><i class="fa fa-download fa-3x"></i></a>
+ 
   {% else %}
   No original available.
   {% endif %}  
