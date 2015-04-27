@@ -7,12 +7,13 @@
 <img src="{{photo.sizes.large.source}}" />
 <p style="padding-left: 50%">
   {% if 'original' in photo.sizes %}
-  <a href="{{ photo.sizes.original.source }}"><i class="fa fa-download"></i></a>
-  <p>Thanks to use my photos for personal use only. Please, respect the creative common licence - Attribution - Pas d’Utilisation Commerciale - Pas de Modification</p>
+  <a href="{{ photo.sizes.original.source }}"><i class="fa fa-download fa-3x"></i></a>
   {% else %}
   No original available.
-  {% endif %}
+  {% endif %}  
   <a href="{{ photo.urls.photopage }}" ><i class="fa fa-flickr fa-3x"></i></a>
+  <p>Thanks to use my photos for personal use only. Please, respect the creative common licence - Attribution - Pas d’Utilisation Commerciale - Pas de Modification</p>
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"<i class="fa fa-cc fa-3x"></i></a>
 </p>
 <hr style="clear:both;"/>
 {% if photo_next %}
